@@ -4,19 +4,6 @@ import java.util.Stack;
 public class 二叉树遍历 {
     TreeNode root;
 
-    /**
-     * 定义
-     ***/
-    static class TreeNode {
-        int value;
-        TreeNode left;
-        TreeNode right;
-
-        public TreeNode(int val) {
-            this.value = val;
-        }
-    }
-
     public 二叉树遍历(int[] arr) {
         root = makeTreeByArray(arr, 1);
     }
