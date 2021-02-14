@@ -1,34 +1,22 @@
+import java.util.Scanner;
+
 public class 跳台阶 {
 
-    public static void main(String[] args) {
-        int n = 3;//台阶数
-        int oneToTwo = OneAndTwo(n);
-        int oneToN = OneToN(n);
-        System.out.println("11111111111111");
-    }
-
-
-    private static int OneAndTwo(int n) {
-        if (n <= 0) {
-            return -1;
-        }
-        if (n == 1) {
+    //https://blog.csdn.net/zkd758/article/details/85143580
+    public static int jumpFloor(int target) {
+        if (target == 1) {
             return 1;
-        }
-        if (n == 2) {
+        } else if (target == 2) {
             return 2;
+        } else {
+            int sum=jumpFloor(target-1)+jumpFloor(target-2);
+            return sum;
         }
-        return OneToN(n - 1) + OneToN(n - 2);
     }
-
-    private static int OneToN(int n) {
-        if (n <= 0) {
-            return -1;
-        }
-        if (n == 1) {
-            return 1;
-        }
-        return 2 * OneToN(n - 1);
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int target= scan.nextInt();
+        System.out.println(jumpFloor(target));
     }
 
 
